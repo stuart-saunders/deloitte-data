@@ -1,5 +1,0 @@
-INSERT INTO Market VALUES('Big5Top', 'Big 5 Top Leagues')
-INSERT INTO Market VALUES('Big5Other', 'Big 5 Other Leagues')
-INSERT INTO Market VALUES('Non5Top', 'Non-Big 5 Top Leagues')
-INSERT INTO Market VALUES('Non5Other', 'Non-Big 5 Other Leagues')
-INSERT INTO Market VALUES('Gov', 'Governing Bodies')

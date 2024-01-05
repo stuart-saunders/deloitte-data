@@ -1,5 +1,0 @@
-INSERT INTO Nation VALUES ('England')
-INSERT INTO Nation VALUES ('France')
-INSERT INTO Nation VALUES ('Germany')
-INSERT INTO Nation VALUES ('Italy')
-INSERT INTO Nation VALUES ('Spain')

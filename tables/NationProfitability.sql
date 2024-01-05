@@ -1,3 +1,4 @@
+--SELECT * FROM NationProfitability
 --DROP TABLE NationProfitability
 
 CREATE TABLE [dbo].[NationProfitability] (

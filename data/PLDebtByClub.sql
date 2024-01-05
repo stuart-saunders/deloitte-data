@@ -1,3 +1,4 @@
+--Values in ££
 -- PLDebtByClub Table Population
 
 --INSERT INTO PLDebtByClub VALUES(2015, '', , -, , -, )
@@ -95,13 +96,13 @@ INSERT INTO PLDebtByClub VALUES(2021, 'Everton', 10, 70, 0, -128, -58, 10)
 
 -- 2021/22
 -- (Season, Club, DebtRank, NetCash, SoftLoans, OtherLoans, NetDebt, LeaguePosition)
-INSERT INTO PLDebtByClub VALUES(2021, 'Tottenham', 1, -626, 0, -19, -645, 4)
-INSERT INTO PLDebtByClub VALUES(2021, 'Manchester United', 2, 121, 0, -641, -520, 6)
-INSERT INTO PLDebtByClub VALUES(2021, 'Brighton', 3, 15, -406, 0, -391, 9)
-INSERT INTO PLDebtByClub VALUES(2021, 'Leicester', 4, -46, -21, -245, -312, 8)
-INSERT INTO PLDebtByClub VALUES(2021, 'Liverpool', 5, -73, -66, -71, -210, 2)
-INSERT INTO PLDebtByClub VALUES(2021, 'Everton', 6, 32, 0, -174, -142, 16)
-INSERT INTO PLDebtByClub VALUES(2021, 'Watford', 7, 1, -52, -79, -130, 19)
-INSERT INTO PLDebtByClub VALUES(2021, 'Wolves', 8, -73, 0, 0, -73, 10)
-INSERT INTO PLDebtByClub VALUES(2021, 'Southampton', 9, -70, -1, 0, -71, 15)
-INSERT INTO PLDebtByClub VALUES(2021, 'Crystal Palace', 10, -25, 0, -41, -66, 12)
+INSERT INTO PLDebtByClub VALUES(2022, 'Tottenham', 1, -626, 0, -19, -645, 4)
+INSERT INTO PLDebtByClub VALUES(2022, 'Manchester United', 2, 121, 0, -641, -520, 6)
+INSERT INTO PLDebtByClub VALUES(2022, 'Brighton', 3, 15, -406, 0, -391, 9)
+INSERT INTO PLDebtByClub VALUES(2022, 'Leicester', 4, -46, -21, -245, -312, 8)
+INSERT INTO PLDebtByClub VALUES(2022, 'Liverpool', 5, -73, -66, -71, -210, 2)
+INSERT INTO PLDebtByClub VALUES(2022, 'Everton', 6, 32, 0, -174, -142, 16)
+INSERT INTO PLDebtByClub VALUES(2022, 'Watford', 7, 1, -52, -79, -130, 19)
+INSERT INTO PLDebtByClub VALUES(2022, 'Wolves', 8, -73, 0, 0, -73, 10)
+INSERT INTO PLDebtByClub VALUES(2022, 'Southampton', 9, -70, -1, 0, -71, 15)
+INSERT INTO PLDebtByClub VALUES(2022, 'Crystal Palace', 10, -25, 0, -41, -66, 12)

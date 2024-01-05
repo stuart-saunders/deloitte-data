@@ -1,3 +1,4 @@
+-- SELECT * FROM NationRevenueByStream
 -- DELETE FROM NationRevenueByStream
 -- DROP TABLE NationRevenueByStream
 

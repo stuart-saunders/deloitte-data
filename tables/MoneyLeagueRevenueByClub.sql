@@ -1,6 +1,9 @@
+--SELECT * FROM MoneyLeagueRevenueByClub
+--DROP TABLE MoneyLeagueRevenueByClub
+
 CREATE TABLE [dbo].[MoneyLeagueRevenueByClub] (
     [Id]                  INT IDENTITY (1, 1) NOT NULL,
-    [NationId]            INT NOT NULL,
+    [Nation]              VARCHAR(10) NOT NULL,
     [Season]              INT NOT NULL,
     [Club]                VARCHAR(30) NOT NULL,
     [RevenueRank]         INT NOT NULL,

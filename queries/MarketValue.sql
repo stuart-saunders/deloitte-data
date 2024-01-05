@@ -1,7 +1,8 @@
-SELECT * FROM Market
-SELECT * FROM MarketValue
+-- Values in €m
 
-SELECT m.Name, mv.Season, mv.Value
-FROM MarketValue mv
-INNER JOIN Market m
-ON mv.MarketId = m.Id
+-- SELECT * FROM MarketValue
+
+
+-- Big5Top
+SELECT * FROM MarketValue
+WHERE Market = 'Big5Top'
