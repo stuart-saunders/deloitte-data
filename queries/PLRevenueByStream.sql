@@ -18,5 +18,5 @@ INNER JOIN PLRevenueByStream t0
     AND t1.RevenueStream = t0.RevenueStream
 --WHERE t1.RevenueStream = 'Broadcasting'
 --WHERE t1.RevenueStream = 'Commercial'
-WHERE t1.RevenueStream = 'Matchday'
-ORDER BY (ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2)) DESC
+--WHERE t1.RevenueStream = 'Matchday'
+--ORDER BY (ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2)) DESC

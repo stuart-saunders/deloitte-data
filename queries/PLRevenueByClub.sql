@@ -23,5 +23,35 @@ LEFT OUTER JOIN PLRevenueByClub t0
 --WHERE t1.Season > 2015
 WHERE t1.Season = 2017
 --AND t1.Club = 'Manchester City'
-AND t1.Season NOT IN ('2020', '2021')
+--AND t1.Season NOT IN ('2020', '2021')
 ORDER BY (ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2)) DESC
+
+--FIND TOP 20 CLUBS BY REVENUE
+SELECT TOP 20 Club, SUM(TotalRevenue) AS SumOfTotalRevenue
+FROM PLRevenueByClub
+GROUP BY Club
+ORDER BY SUM(TotalRevenue) DESC
+
+-- REVENUE BY CLUB FOR TOP 10 CLUBS
+SELECT * FROM PLRevenueByClub
+WHERE Club IN(
+  SELECT Club FROM (
+    SELECT TOP 10 Club, SUM(TotalRevenue) AS SumOfTotalRevenue
+    FROM PLRevenueByClub
+    GROUP BY Club
+    ORDER BY SUM(TotalRevenue) DESC
+  ) top10
+)
+
+-- REVENUE BY CLUB FOR NEXT 10 CLUBS
+SELECT * FROM PLRevenueByClub
+WHERE Club IN(
+  SELECT Club FROM (
+    SELECT Club, SUM(TotalRevenue) AS SumOfTotalRevenue
+    FROM PLRevenueByClub
+    GROUP BY Club
+    ORDER BY SUM(TotalRevenue) DESC
+    OFFSET 10 ROWS -- Skip the first 10 rows
+    FETCH NEXT 10 ROWS ONLY
+  ) next10
+)
