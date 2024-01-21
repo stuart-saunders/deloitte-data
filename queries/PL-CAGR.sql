@@ -70,7 +70,7 @@
 -- CAGR for League as a Whole per Year
 SELECT 
     t1.Season AS Current_Season,
-    -- t1.RevenueRank,
+    --t1.RevenueRank,
     -- t1.Club,
     SUM(t1.TotalRevenue) AS Total_Current_Revenue,
     -- t0.Season AS Previous_Season,
@@ -84,14 +84,11 @@ FROM PLRevenueByClub t1
 LEFT OUTER JOIN PLRevenueByClub t0 
     ON t1.Season = t0.Season + 1 --Per Year
     --ON t1.Season = t0.Season + 7 -- Per Period
-    --AND t1.RevenueRank = t0.RevenueRank
-    AND t1.Club = t0.Club
+    AND t1.RevenueRank = t0.RevenueRank
+    --AND t1.Club = t0.Club
 --WHERE t1.Season > 2015
 GROUP BY t1.Season
-HAVING t1.Season = 2019
---AND t1.Club = 'Manchester City'
---AND t1.Season NOT IN ('2020', '2021')
---ORDER BY (ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2)) DESC
+HAVING t1.Season = 2019 --AND (t1.RevenueRank >= 1 AND t1.RevenueRank <= 10)
 
 
 -- CAGR per Club per Year
@@ -102,8 +99,10 @@ SELECT
     t1.TotalRevenue AS Current_Revenue,
     -- t0.Season AS Previous_Season,
     -- t0.RevenueRank AS Previous_Season_Rank,
-    -- t0.Club,
+    t1.LeaguePosition,
+    t0.Club,
     t0.TotalRevenue AS Previous_Revenue,
+    t0.LeaguePosition,
     (t1.TotalRevenue - t0.TotalRevenue) AS Revenue_Change,
     FORMAT(ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2), 'N', 'en-gb') AS Percentage_Revenue_Change
     --ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ), 2) AS Percentage_Revenue_Increase
@@ -111,8 +110,64 @@ FROM PLRevenueByClub t1
 LEFT OUTER JOIN PLRevenueByClub t0 
     ON t1.Season = t0.Season + 1 --Per Year
     --ON t1.Season = t0.Season + 7 -- Per Period
-    --AND t1.RevenueRank = t0.RevenueRank
     AND t1.Club = t0.Club
+    --AND t1.RevenueRank = t0.RevenueRank
+    --AND t1.LeaguePosition = t0.LeaguePosition
 WHERE t1.Season > 2015
 -- WHERE t1.Season = 2019
 ORDER BY (ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2)) DESC
+
+
+
+
+
+
+
+
+
+
+
+SELECT 
+    t1.Season AS Current_Season,
+    SUM(t1.TotalRevenue) AS Total_Current_Revenue,    
+    SUM(t0.TotalRevenue) AS Total_Previous_Revenue,
+    (SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) AS Percentage_Revenue_Change
+FROM PLRevenueByClub t1
+LEFT OUTER JOIN PLRevenueByClub t0 
+    ON t1.Season = t0.Season + 1 --Per Year
+    AND t1.LeaguePosition = t0.LeaguePosition
+WHERE t1.LeaguePosition BETWEEN 1 AND 5
+GROUP BY t1.Season
+--HAVING t1.Season = 2018
+
+SELECT 
+    t1.Season AS Current_Season,
+    SUM(t1.TotalRevenue) AS Total_Current_Revenue,    
+    SUM(t0.TotalRevenue) AS Total_Previous_Revenue,
+    (SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) AS Percentage_Revenue_Change
+FROM PLRevenueByClub t1
+LEFT OUTER JOIN PLRevenueByClub t0 
+    ON t1.Season = t0.Season + 1 --Per Year
+    AND t1.LeaguePosition = t0.LeaguePosition
+WHERE t1.LeaguePosition BETWEEN 6 AND 15
+GROUP BY t1.Season
+--HAVING t1.Season = 2018
+
+SELECT 
+    t1.Season AS Current_Season,
+    SUM(t1.TotalRevenue) AS Total_Current_Revenue,    
+    SUM(t0.TotalRevenue) AS Total_Previous_Revenue,
+    (SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) AS Percentage_Revenue_Change
+FROM PLRevenueByClub t1
+LEFT OUTER JOIN PLRevenueByClub t0 
+    ON t1.Season = t0.Season + 1 --Per Year
+    AND t1.LeaguePosition = t0.LeaguePosition
+WHERE t1.LeaguePosition BETWEEN 16 AND 20
+GROUP BY t1.Season
+--HAVING t1.Season = 2018
+
+
+SELECT SUM(TotalRevenue)
+FROM PLRevenueByClub
+WHERE LeaguePosition BETWEEN 16 AND 20
+AND Season = '2022'

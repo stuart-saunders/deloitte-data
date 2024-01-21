@@ -8,6 +8,6 @@ CREATE TABLE [dbo].[PLRevenueByClub] (
     [RevenueRank]    INT             NOT NULL,
     [TotalRevenue]   DECIMAL (10, 2) NULL,
     [WageCosts]      DECIMAL (10, 2) NULL,
-    [LeaguePosition] DECIMAL (10, 2) NULL,
+    [LeaguePosition] INT             NULL,
     CONSTRAINT [PK_PLRevenueByClub] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
