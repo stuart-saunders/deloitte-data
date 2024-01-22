@@ -1,4 +1,19 @@
-INSERT INTO CAGR
+
+SELECT 
+    Season,
+    'All',
+    SUM(Revenue) AS TotalRevenue,
+    SUM(PrevRevenue) AS TotalPrevRevenue,
+    SUM(Revenue) + SUM(PrevRevenue) AS CumulativeRevenue,
+    (SUM(Revenue) - SUM(PrevRevenue)) AS RevenueChange,
+    FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+FROM CAGR
+GROUP BY Season
+
+
+
+/*
+--INSERT INTO CAGR
 SELECT 
 t1.Season,
 t1.RevenueRank,
@@ -9,6 +24,7 @@ t0.RevenueRank,
 t0.Club,
 t0.TotalRevenue,
 t1.TotalRevenue - t0.TotalRevenue,
+t1.TotalRevenue + t0.TotalRevenue AS CumulativeRevenue,
 FORMAT(ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2), 'N', 'en-gb')
 FROM PLRevenueByClub t1
 LEFT OUTER JOIN PLRevenueByClub t0 
@@ -18,4 +34,6 @@ LEFT OUTER JOIN PLRevenueByClub t0
     --AND t1.Club = t0.Club
     AND t1.RevenueRank = t0.RevenueRank
 --WHERE t1.Season = '2022'
+WHERE t0.Season IS NOT NULL
 --GROUP BY t1.Season
+*/
