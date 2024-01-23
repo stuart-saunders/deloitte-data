@@ -1,5 +1,7 @@
 -- ALL
-INSERT INTO CAGRPerPeriod
+--INSERT INTO CAGRPerPeriod
+-- select * from cagr order by season, RevenueRank
+-- select * from cagr where RevenueRank = 1
 SELECT 
     'All' AS Category,
     t1.Season,
