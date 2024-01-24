@@ -1,7 +1,7 @@
--- SELECT * FROM CAGRBySeasonAndRank
--- DROP TABLE CAGRBySeasonAndRank
+-- SELECT * FROM PLGrowthBySeasonAndRank
+-- DROP TABLE PLGrowthBySeasonAndRank
 
-CREATE TABLE [dbo].[CAGRBySeasonAndRank] (
+CREATE TABLE [dbo].[PLGrowthBySeasonAndRank] (
     [Id]                      INT IDENTITY (1, 1) NOT NULL,
     [Season]                  INT NOT NULL,
     [RevenueRank]             INT NOT NULL,
@@ -10,8 +10,8 @@ CREATE TABLE [dbo].[CAGRBySeasonAndRank] (
     [PrevRevenueRank]         INT,
     [PrevRevenue]             DECIMAL(10,2),
     [RevenueChange]           DECIMAL(10,2),
-    [CAGR]                    DECIMAL(10,2),
-    CONSTRAINT [PK_CAGRBySeasonAndRank] PRIMARY KEY CLUSTERED ([Id] ASC)
+    [PercentageRevenueChange] DECIMAL(10,2),
+    CONSTRAINT [PK_PLGrowthBySeasonAndRank] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 

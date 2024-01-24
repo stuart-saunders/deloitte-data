@@ -1,6 +1,6 @@
--- SELECT * FROM CAGRBySeasonAndRank
+-- SELECT * FROM PLGrowthBySeasonAndRank
 
-INSERT INTO CAGRBySeasonAndRank
+INSERT INTO PLGrowthBySeasonAndRank
 SELECT 
     t1.Season,
     t1.RevenueRank,
