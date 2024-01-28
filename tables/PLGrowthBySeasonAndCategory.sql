@@ -1,7 +1,7 @@
--- SELECT * FROM PLGrowthBySeason WHERE Season = 2015
--- DROP TABLE PLGrowthBySeason
+-- SELECT * FROM PLGrowthBySeasonAndCategory WHERE Season = 2015
+-- DROP TABLE PLGrowthBySeasonAndCategory
 
-CREATE TABLE [dbo].[PLGrowthBySeason] (
+CREATE TABLE [dbo].[PLGrowthBySeasonAndCategory] (
     [Id]                      INT IDENTITY (1, 1) NOT NULL,
     [Season]                  INT NOT NULL,
     [Category]                VARCHAR(20) NOT NULL,
@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[PLGrowthBySeason] (
     [PrevSeasonRevenue]       DECIMAL(10,2),
     [RevenueChange]           DECIMAL(10,2),
     [PercentageRevenueChange] DECIMAL(10,2),
-    [CumulativeRevenue]       DECIMAL(10,2)
+    [CumulativeRevenue]       DECIMAL(10,2),
+    [TotalRevenue]       DECIMAL(10,2)
     CONSTRAINT [PK_PLGrowthBySeason] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
