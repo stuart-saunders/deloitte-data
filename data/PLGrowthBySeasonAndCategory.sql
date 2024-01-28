@@ -48,7 +48,7 @@ WHERE RevenueRank BETWEEN 6 AND 10
 GROUP BY Season
 
 -- Bottom Half Clubs
-INSERT INTO PLGrowthBySeason
+INSERT INTO PLGrowthBySeasonAndCategory
 SELECT 
     Season,
     'Bottom Half' AS Category,
@@ -56,7 +56,8 @@ SELECT
     SUM(PrevRevenue) AS PrevSeasonRevenue,
     (SUM(Revenue) - SUM(PrevRevenue)) AS RevenueChange,
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
-    SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue
+    SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
+    SUM(SUM(Revenue)) OVER () AS TotalRevenue
 FROM PLGrowthBySeasonAndRank
 WHERE RevenueRank BETWEEN 11 AND 15
 GROUP BY Season

@@ -1,4 +1,4 @@
--- SELECT * FROM PLGrowthBySeasonAndCategory WHERE Season = 2015
+-- SELECT * FROM PLGrowthBySeasonAndCategory WSeason = 2015
 -- DROP TABLE PLGrowthBySeasonAndCategory
 
 CREATE TABLE [dbo].[PLGrowthBySeasonAndCategory] (
