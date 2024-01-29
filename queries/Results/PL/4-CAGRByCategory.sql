@@ -1,15 +1,15 @@
--- SELECT * FROM PLGrowthBySeason
+-- SELECT * FROM PLGrowthBySeasonAndCategory
 
 SELECT
     t1.Category,
     t1.Season,
     t1.SeasonRevenue,
-    t1.CumulativeRevenue,
+    --t1.CumulativeRevenue,
     t0.Season,
     t0.PrevSeasonRevenue,
-    POWER((t1.CumulativeRevenue / t0.PrevSeasonRevenue), (1.0 / (t1.Season - t0.Season + 1))) - 1 AS CAGR
-FROM PLGrowthBySeason t1
-LEFT OUTER JOIN PLGrowthBySeason t0 
+    POWER((t1.SeasonRevenue / t0.PrevSeasonRevenue), (1.0 / ((t1.Season - t0.Season) + 1))) - 1 AS CAGR
+FROM PLGrowthBySeasonAndCategory t1
+LEFT OUTER JOIN PLGrowthBySeasonAndCategory t0 
     ON t1.Season = t0.Season + 6 --Per Period
     AND t1.Category = t0.Category
 WHERE 

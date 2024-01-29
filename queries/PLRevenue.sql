@@ -39,11 +39,18 @@ SELECT
     RevenueRank,
     LeaguePosition
 FROM PLRevenueByClub
-WHERE LeaguePosition >= 16
-ORDER BY RevenueRank, LeaguePosition <= 10
+WHERE LeaguePosition >= 16 AND 
+ORDER BY Season --RevenueRank, LeaguePosition <= 10
 
 --How Many Teams with Bottom 5 Revenue Finish above Bottom 5
-
+SELECT
+    Season,
+    Club,
+    RevenueRank,
+    LeaguePosition
+FROM PLRevenueByClub
+WHERE LeaguePosition <= 16 AND RevenueRank >=16
+--ORDER BY RevenueRank, LeaguePosition <= 10
 
 --How is the Gap Between Top 5 and Bottom 5 Over the Period
 -- How Many Teams Have Finished Bottom 5 with Top 10 Revenue
