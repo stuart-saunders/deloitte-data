@@ -1,4 +1,4 @@
-SELECT * FROM PLGrowthBySeasonAndRank
+--SELECT * FROM PLGrowthBySeasonAndRank
 
 -- Include Club Names
 SELECT 

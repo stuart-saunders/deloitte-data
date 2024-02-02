@@ -4,9 +4,11 @@ INSERT INTO PLGrowthBySeasonAndRank
 SELECT 
     t1.Season,
     t1.RevenueRank,
+    t1.Club,
     t1.TotalRevenue,
     t0.Season,
     t0.RevenueRank,
+    t0.Club,
     t0.TotalRevenue,
     t1.TotalRevenue - t0.TotalRevenue,
     FORMAT(ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2), 'N', 'en-gb')
