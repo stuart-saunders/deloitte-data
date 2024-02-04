@@ -26,6 +26,7 @@ IN (
 )
 GROUP By t1.Season, t0.Season
 
+UNION
 
 -- REST
 SELECT

@@ -9,8 +9,8 @@ SELECT
 FROM PLGrowthBySeasonAndGrouping
 --WHERE Grouping = 'All'
 --WHERE Grouping = 'Top 5'
---WHERE Grouping = 'Mid-Top'
---WHERE Grouping = 'Mid-Bottom'
+--WHERE Grouping = 'Middle-Top'
+--WHERE Grouping = 'Middle-Bottom'
 --WHERE Grouping = 'Bottom 5'
 GROUP BY Season, Grouping, PrevSeason
 --ORDER BY (SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) DESC
