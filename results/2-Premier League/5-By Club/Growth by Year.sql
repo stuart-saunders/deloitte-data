@@ -14,7 +14,7 @@ LEFT OUTER JOIN PLRevenueByClub t0
     ON t1.Season = t0.Season + 1 --Per Year
     --ON t1.Season = t0.Season + 7 --Per Period
     AND t1.Club = t0.Club
-WHERE t0.Season IS NOT NULL
+--WHERE t0.Season IS NOT NULL
 -- AND t1.Club IN (
 --     'Manchester United'
 -- )
