@@ -1,6 +1,6 @@
 -- SELECT * FROM PLGrowthBySeasonAndRank
 
-INSERT INTO PLGrowthBySeasonAndRank
+--INSERT INTO PLGrowthBySeasonAndRevenueRank
 SELECT 
     t1.Season,
     t1.RevenueRank,

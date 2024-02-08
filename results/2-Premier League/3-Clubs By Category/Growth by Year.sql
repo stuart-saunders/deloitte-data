@@ -53,3 +53,10 @@ IN (
     'Tottenham'
 )
 GROUP By t1.Season, t0.Season
+
+
+/*
+SELECT Category, SUM(CombinedRevenue)
+FROM PLRevenueByClub
+GROUP BY Category
+*/

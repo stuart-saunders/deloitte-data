@@ -1,3 +1,4 @@
+-- SELECT * FROM PLRevenueByStream
 -- DROP TABLE [dbo].[PLRevenueByStream]
 
 CREATE TABLE [dbo].[PLRevenueByStream] (
