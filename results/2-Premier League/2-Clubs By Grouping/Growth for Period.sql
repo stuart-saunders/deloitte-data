@@ -35,3 +35,4 @@ LEFT OUTER JOIN PLGrowthBySeasonAndGrouping t0
     AND t1.Grouping = t0.Grouping
 WHERE t1.Season = 2022
 GROUP BY t1.Grouping, t1.Season, t0.Season
+ORDER BY CAGR DESC
