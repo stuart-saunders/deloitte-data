@@ -1,7 +1,7 @@
 SELECT
     t1.Season,
     --t1.Nation,
-    --t1.RevenueRank,
+    t1.RevenueRank,
     t1.Club,
     t1.TotalRevenue AS TotalRevenue,
     t0.Season AS PrevSeason,
@@ -27,4 +27,4 @@ ON t1.Season = t0.Season + 7
 AND t1.RevenueRank = t0.RevenueRank
 --GROUP BY t1.Season, t1.Nation, t1.RevenueRank, t0.Season, t0.TotalRevenue
 WHERE t1.Season = 2022
-ORDER BY t1.Season
+ORDER BY CAGR DESC

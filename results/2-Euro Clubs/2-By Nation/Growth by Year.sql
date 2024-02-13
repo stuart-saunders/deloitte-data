@@ -1,3 +1,5 @@
+-- SELECT * FROM MoneyLeagueRevenueByClub WHERE Season = 2019
+
 SELECT
     t1.Season,
     t1.Nation,

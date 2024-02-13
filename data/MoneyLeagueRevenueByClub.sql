@@ -105,8 +105,8 @@ INSERT INTO MoneyLeagueRevenueByClub VALUES('Spain', 2019, 'Barcelona', 1, 159.2
 INSERT INTO MoneyLeagueRevenueByClub VALUES('Spain', 2019, 'Real Madrid', 2, 144.8, 257.9, 354.6, 757.3, NULL, NULL, NULL, NULL, 3)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Manchester United', 3, 120.6, 273.7, 317.2, 711.5, NULL, NULL, NULL, NULL, 6)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('Germany', 2019, 'Bayern Munich', 4, 92.4, 211.2, 356.5, 660.1, NULL, NULL, NULL, NULL, 1)
-INSERT INTO MoneyLeagueRevenueByClub VALUES('France', 2019, 'Paris Saint-Germain', 5, 115.9, 156.6, 363.4, NULL, NULL, NULL, NULL, NULL, 1)
-INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Manchester City', 6, 62.4, 287.2, 261.0, NULL, NULL, NULL, NULL, NULL, 1)
+INSERT INTO MoneyLeagueRevenueByClub VALUES('France', 2019, 'Paris Saint-Germain', 5, 115.9, 156.6, 363.4, 635.9, NULL, NULL, NULL, NULL, 1)
+INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Manchester City', 6, 62.4, 287.2, 261.0, 610.6, NULL, NULL, NULL, NULL, 1)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Liverpool', 7, 94.5, 299.3, 210.9, 604.7, NULL, NULL, NULL, NULL, 2)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Tottenham', 8, 95.5, 276.7, 151.9, 521.1, NULL, NULL, NULL, NULL, 4)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2019, 'Chelsea', 9, 75.6, 227.1, 210.4, 513.1, NULL, NULL, NULL, NULL, 3)
@@ -167,7 +167,7 @@ INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2021, 'Leicester', 15, 0.
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2021, 'West Ham', 16, 0.6, 184.2, 36.7, 221.5, 52.4, 61.1, -8.8, 146.2, 6)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2021, 'Wolves', 17, 0.8, 191.3, 27.2, 219.2, 85.4, 98.1, -12.7, 157.8, 13)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('England', 2021, 'Everton', 18, 0.3, 165.3, 52.5, 218.1, 54.6, 130.0, -75.4, 206.1, 10)
-INSERT INTO MoneyLeagueRevenueByClub VALUES('Italy', 2021, 'AC Milan', 19, 0.0, 147.2, 69.1, 216.3, 28.4, 81.0, -52.6, 168.7, 2)
+INSERT INTO MoneyLeagueRevenueByClub VALUES('Italy', 2021, 'AC Milan', 19, 0.1, 147.2, 69.1, 216.3, 28.4, 81.0, -52.6, 168.7, 2)
 INSERT INTO MoneyLeagueRevenueByClub VALUES('Russia', 2021, 'Zenit', 20, 7.3, 43.2, 161.5, 212.0, 7.1, NULL, NULL, NULL, 1)
 
 -- 2021/22
