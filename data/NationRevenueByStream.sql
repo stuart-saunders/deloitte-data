@@ -11,14 +11,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2015, 'Commercial', 1295)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2015, 'Matchday', 165)
 INSERT INTO NationRevenueByStream VALUES('France', 2015, 'Broadcasting', 628)
-INSERT INTO NationRevenueByStream VALUES('France', 2015, 'Commercial', 307)
-INSERT INTO NationRevenueByStream VALUES('France', 2015, 'Other', 318)
+INSERT INTO NationRevenueByStream VALUES('France', 2015, 'Commercial', 625)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2015, 'Matchday', 521)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2015, 'Broadcasting', 731)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2015, 'Commercial', 673)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2015, 'Other', 467)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2015, 'Commercial', 1140)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2015, 'Matchday', 210)
@@ -42,14 +40,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2016, 'Commercial', 1457)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2016, 'Matchday', 164)
 INSERT INTO NationRevenueByStream VALUES('France', 2016, 'Broadcasting', 656)
-INSERT INTO NationRevenueByStream VALUES('France', 2016, 'Commercial', 325)
-INSERT INTO NationRevenueByStream VALUES('France', 2016, 'Other', 340)
+INSERT INTO NationRevenueByStream VALUES('France', 2016, 'Commercial', 665)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2016, 'Matchday', 528)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2016, 'Broadcasting', 933)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2016, 'Commercial', 773)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2016, 'Other', 478)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2016, 'Commercial', 1251)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2016, 'Matchday', 204)
@@ -73,14 +69,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2017, 'Commercial', 1358)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2017, 'Matchday', 182)
 INSERT INTO NationRevenueByStream VALUES('France', 2017, 'Broadcasting', 819)
-INSERT INTO NationRevenueByStream VALUES('France', 2017, 'Commercial', 345)
-INSERT INTO NationRevenueByStream VALUES('France', 2017, 'Other', 297)
+INSERT INTO NationRevenueByStream VALUES('France', 2017, 'Commercial', 642)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2017, 'Matchday', 504)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2017, 'Broadcasting', 960)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2017, 'Commercial', 854)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2017, 'Other', 475)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2017, 'Commercial', 1329)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2017, 'Matchday', 217)
@@ -104,14 +98,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2018, 'Commercial', 1473)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2018, 'Matchday', 191)
 INSERT INTO NationRevenueByStream VALUES('France', 2018, 'Broadcasting', 791)
-INSERT INTO NationRevenueByStream VALUES('France', 2018, 'Commercial', 342)
-INSERT INTO NationRevenueByStream VALUES('France', 2018, 'Other', 368)
+INSERT INTO NationRevenueByStream VALUES('France', 2018, 'Commercial', 710)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2018, 'Matchday', 538)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2018, 'Broadcasting', 1248)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2018, 'Commercial', 872)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2018, 'Other', 510)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2018, 'Commercial', 1382)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2018, 'Matchday', 257)
@@ -135,14 +127,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2019, 'Commercial', 1616)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2019, 'Matchday', 201)
 INSERT INTO NationRevenueByStream VALUES('France', 2019, 'Broadcasting', 901)
-INSERT INTO NationRevenueByStream VALUES('France', 2019, 'Commercial', 415)
-INSERT INTO NationRevenueByStream VALUES('France', 2019, 'Other', 385)
+INSERT INTO NationRevenueByStream VALUES('France', 2019, 'Commercial', 800)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2019, 'Matchday', 520)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2019, 'Broadcasting', 1483)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2019, 'Commercial', 846)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2019, 'Other', 496)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2019, 'Commercial', 1342)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2019, 'Matchday', 284)
@@ -166,14 +156,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2020, 'Commercial', 1782)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2020, 'Matchday', 170)
 INSERT INTO NationRevenueByStream VALUES('France', 2020, 'Broadcasting', 690)
-INSERT INTO NationRevenueByStream VALUES('France', 2020, 'Commercial', 473)
-INSERT INTO NationRevenueByStream VALUES('France', 2020, 'Other', 265)
+INSERT INTO NationRevenueByStream VALUES('France', 2020, 'Commercial', 738)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2020, 'Matchday', 364)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2020, 'Broadcasting', 1489)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2020, 'Commercial', 889)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2020, 'Other', 466)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2020, 'Commercial', 1355)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2020, 'Matchday', 234)
@@ -197,14 +185,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2021, 'Commercial', 1686)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2021, 'Matchday', 8)
 INSERT INTO NationRevenueByStream VALUES('France', 2021, 'Broadcasting', 836)
-INSERT INTO NationRevenueByStream VALUES('France', 2021, 'Commercial', 451)
-INSERT INTO NationRevenueByStream VALUES('France', 2021, 'Other', 319)
+INSERT INTO NationRevenueByStream VALUES('France', 2021, 'Commercial', 770)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2021, 'Matchday', 22)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2021, 'Broadcasting', 1659)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2021, 'Commercial', 836)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2021, 'Other', 488)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2021, 'Commercial', 1324)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2021, 'Matchday', 13)
@@ -228,14 +214,12 @@ INSERT INTO NationRevenueByStream VALUES('England', 2022, 'Commercial', 2053)
 -- France
 INSERT INTO NationRevenueByStream VALUES('France', 2022, 'Matchday', 225)
 INSERT INTO NationRevenueByStream VALUES('France', 2022, 'Broadcasting', 729)
-INSERT INTO NationRevenueByStream VALUES('France', 2022, 'Commercial', 653)
-INSERT INTO NationRevenueByStream VALUES('France', 2022, 'Other', 419)
+INSERT INTO NationRevenueByStream VALUES('France', 2022, 'Commercial', 1072)
 
 -- Germany
 INSERT INTO NationRevenueByStream VALUES('Germany', 2022, 'Matchday', 277)
 INSERT INTO NationRevenueByStream VALUES('Germany', 2022, 'Broadcasting', 1380)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2022, 'Commercial', 929)
-INSERT INTO NationRevenueByStream VALUES('Germany', 2022, 'Other', 563)
+INSERT INTO NationRevenueByStream VALUES('Germany', 2022, 'Commercial', 1492)
 
 -- Italy
 INSERT INTO NationRevenueByStream VALUES('Italy', 2022, 'Matchday', 231)

@@ -1,8 +1,6 @@
 SELECT
     t1.Nation,
-    -- t1.Season AS 'End Season',
     SUM(t1.TotalRevenue) AS '2022 Revenue',
-    -- t0.Season AS PrevSeason,
     t0.TotalRevenue AS '2015 Revenue',
     SUM(t1.TotalRevenue) - t0.TotalRevenue AS 'Growth Amount',
     FORMAT(ROUND(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100, 2), 'N', 'en-gb') AS 'Growth %',    

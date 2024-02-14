@@ -1,10 +1,10 @@
 SELECT
-    t1.Season,
+    --t1.Season,
     t1.Nation,
-    t1.RevenueStream,
-    SUM(t1.TotalRevenue) AS TotalRevenue,
-    t0.Season AS PrevSeason,
-    t0.TotalRevenue AS PrevTotalRevenue,
+    t1.RevenueStream AS 'Revenue Stream',
+    SUM(t1.TotalRevenue) AS '2022 Revenue',
+    --t0.Season AS PrevSeason,
+    t0.TotalRevenue AS '2015 Revenue',
     SUM(t1.TotalRevenue) - t0.TotalRevenue AS 'Growth Amount',
     FORMAT(ROUND(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100, 2), 'N', 'en-gb') AS 'Growth %',    
     POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
