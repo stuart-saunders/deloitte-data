@@ -1,11 +1,11 @@
 SELECT
     t1.Season,
     t1.Grouping,
-    SUM(t1.Revenue) AS CombinedRevenue,
+    SUM(t1.Revenue) AS TotalRevenue,
     t0.Season,
-    SUM(t0.Revenue) AS CombinedPrevRevenue,
-    SUM(t1.Revenue) - SUM(t0.Revenue) AS CombinedRevenueChange,
-    FORMAT(ROUND(((SUM(t1.Revenue) - SUM(t0.Revenue)) / SUM(t0.Revenue)) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange,
+    SUM(t0.Revenue) AS TotalPrevRevenue,
+    SUM(t1.Revenue) - SUM(t0.Revenue) AS 'Growth Amount',
+    FORMAT(ROUND(((SUM(t1.Revenue) - SUM(t0.Revenue)) / SUM(t0.Revenue)) * 100, 2), 'N', 'en-gb') AS 'Growth %',
     POWER((SUM(t1.Revenue) / SUM(t0.Revenue)), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
 FROM MLGrowthBySeasonAndGrouping t1
 LEFT OUTER JOIN MLGrowthBySeasonAndGrouping t0 

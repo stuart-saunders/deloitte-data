@@ -1,10 +1,10 @@
 SELECT
     Season,
     Grouping,
-    SUM(Revenue) AS CombinedRevenue,
+    SUM(Revenue) AS TotalRevenue,
     PrevSeason,
-    SUM(PrevRevenue) AS CombinedPrevRevenue,
-    SUM(RevenueChange) AS CombinedRevenueChange,
+    SUM(PrevRevenue) AS TotalPrevRevenue,
+    SUM(RevenueChange) AS RevenueChange,
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue)) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
 FROM MLGrowthBySeasonAndGrouping
 --WHERE Grouping = 'All'
