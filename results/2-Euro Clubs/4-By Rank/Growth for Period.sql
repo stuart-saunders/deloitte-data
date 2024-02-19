@@ -28,3 +28,18 @@ AND t1.RevenueRank = t0.RevenueRank
 --GROUP BY t1.Season, t1.Nation, t1.RevenueRank, t0.Season, t0.TotalRevenue
 WHERE t1.Season = 2022
 ORDER BY CAGR DESC
+
+
+
+SELECT *
+FROM MoneyLeagueRevenueByClub
+WHERE Season = 2015
+AND Nation = 'England'
+
+SELECT 
+    Season,
+    Nation,
+    COUNT(Club)
+FROM MoneyLeagueRevenueByClub
+WHERE Season IN (2015, 2022)
+GROUP BY Nation, Season

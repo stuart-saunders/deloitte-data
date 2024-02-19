@@ -1,0 +1,20 @@
+SELECT
+    Season,
+    SUM(TotalRevenue) AS 'Total Revenue',
+    STDEV(TotalRevenue) AS 'Std Deviation',
+    AVG(TotalRevenue) AS Mean,
+    (STDEV(TotalRevenue) / AVG(TotalRevenue)) * 100 AS 'Coefficient of Variation'
+--FROM NationRevenueByStream
+FROM (
+    SELECT
+        Season,
+        Nation,
+        SUM(TotalRevenue) AS TotalRevenue
+    FROM NationRevenueByStream
+    GROUP BY Season, Nation
+) t
+GROUP BY Season
+
+
+-- SELECT * FROM NationRevenueByStream
+-- WHERE Season = 2022
