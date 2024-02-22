@@ -1,6 +1,7 @@
 SELECT 
     t1.Season,
     t1.RevenueRank,
+    t1.Nation,
     t1.Club,
     t1.TotalRevenue,
     t0.Season AS PrevSeason,
@@ -15,8 +16,10 @@ LEFT OUTER JOIN MoneyLeagueRevenueByClub t0
     --ON t1.Season = t0.Season + 1 --Per Year
     ON t1.Season = t0.Season + 7 --Per Period
     AND t1.Club = t0.Club
-    WHERE t0.Season IS NOT NULL
+WHERE t0.Season IS NOT NULL
 -- AND t1.Club IN (
 --     'Manchester United'
 -- )
+-- AND t1.Nation = 'England'
+
 ORDER BY (t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue DESC

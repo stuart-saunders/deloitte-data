@@ -19,4 +19,5 @@ LEFT OUTER JOIN (
 ) t0
 ON t1.Season = t0.Season + 1
 AND t1.Nation = t0.Nation
+WHERE t1.Nation = 'England'
 GROUP BY t1.Season, t1.Nation, t0.Season, t0.TotalRevenue

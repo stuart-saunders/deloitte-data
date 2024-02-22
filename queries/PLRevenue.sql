@@ -84,3 +84,7 @@ INNER JOIN PLRevenueByClub t0
 
 
 --How Have Revenues of Top 5 and Bottom 5 evolved?
+
+
+
+-- Below Top 5 revebue qualifying for Champions' League
