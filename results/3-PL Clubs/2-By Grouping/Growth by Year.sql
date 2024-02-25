@@ -7,8 +7,8 @@ SELECT
     SUM(RevenueChange) AS CombinedRevenueChange,
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue)) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
 FROM PLGrowthBySeasonAndGrouping
-WHERE Grouping = 'All'
---WHERE Grouping = 'Top 5'
+--WHERE Grouping = 'All'
+WHERE Grouping = 'Top 5'
 --WHERE Grouping = 'Middle-Top'
 --WHERE Grouping = 'Middle-Bottom'
 --WHERE Grouping = 'Bottom 5'

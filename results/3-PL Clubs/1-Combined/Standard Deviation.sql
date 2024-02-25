@@ -20,7 +20,7 @@
 -- WHERE t1.Season = 2022
 -- GROUP BY t1.Season, t0.Season
 
-SELECT AVG(TotalRevenue) FROM PLRevenueByClub
+SELECT AVG(TotalRevenue) AS 'AverageRevenue' FROM PLRevenueByClub
 
 -- Calculate Standard Deviation for Combined Revenue
 SELECT
