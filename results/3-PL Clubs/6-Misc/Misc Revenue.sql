@@ -39,7 +39,7 @@ SELECT
     RevenueRank,
     LeaguePosition
 FROM PLRevenueByClub
-WHERE LeaguePosition >= 16 AND 
+WHERE LeaguePosition >= 16 AND RevenueRank >= 10
 ORDER BY Season --RevenueRank, LeaguePosition <= 10
 
 --How Many Teams with Bottom 5 Revenue Finish above Bottom 5
