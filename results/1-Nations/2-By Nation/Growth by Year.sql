@@ -18,7 +18,7 @@ LEFT OUTER JOIN (
 ON t1.Season = t0.Season + 1
 AND t1.Nation = t0.Nation
 
---WHERE Season = 2019
---AND Nation = 'England'
+--WHERE t1.Season = 2018
+--AND t1.Nation = 'France'
 
 GROUP BY t1.Season, t1.Nation, t0.Season, t0.TotalRevenue
