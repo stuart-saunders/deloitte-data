@@ -1,10 +1,12 @@
 -- BIG 6
 SELECT
     'Big 6' AS Category,
-    t1.Season,
-    SUM(t1.TotalRevenue) AS CombinedRevenue,
-    t0.Season AS PrevSeason,
-    SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
+    --t1.Season,
+    SUM(t1.TotalRevenue) AS [2022 Revenue],
+    FORMAT((ROUND(((SUM(t1.TotalRevenue) / t22.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [% of 2022 Total],
+    --t0.Season AS PrevSeason,
+    SUM(t0.TotalRevenue) AS [2015 Revenue],
+    FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [% of 2015 Total],
     SUM(t1.TotalRevenue - t0.TotalRevenue) AS RevenueChange,
     FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange,
     POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
@@ -13,6 +15,16 @@ LEFT OUTER JOIN PLRevenueByClub t0
     --ON t1.Season = t0.Season + 1 --Per Year
     ON t1.Season = t0.Season + 7 --Over Period
     AND t1.RevenueRank = t0.RevenueRank
+CROSS JOIN (
+  SELECT SUM(TotalRevenue) AS TotalRevenue
+  FROM PLRevenueByClub
+  WHERE Season = 2022
+) t22
+CROSS JOIN (
+  SELECT SUM(TotalRevenue) AS [TotalRevenue]
+  FROM PLRevenueByClub
+  WHERE Season = 2015
+) t15
 WHERE t0.Season IS NOT NULL
 AND t1.Club
 -- NOT
@@ -24,17 +36,19 @@ IN (
     'Arsenal',
     'Tottenham'
 )
-GROUP By t1.Season, t0.Season
+GROUP By t1.Season, t0.Season, t22.TotalRevenue, t15.TotalRevenue
 
 UNION
 
 -- REST
 SELECT
     'Rest' AS Category,
-    t1.Season,
+    --t1.Season,
     SUM(t1.TotalRevenue) AS CombinedRevenue,
-    t0.Season AS PrevSeason,
+    FORMAT((ROUND(((SUM(t1.TotalRevenue) / t22.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [% of 2022 Total],
+    --t0.Season AS PrevSeason,
     SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
+    FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [% of 2015 Total],
     SUM(t1.TotalRevenue - t0.TotalRevenue) AS RevenueChange,
     FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange,
     POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
@@ -43,6 +57,16 @@ LEFT OUTER JOIN PLRevenueByClub t0
     --ON t1.Season = t0.Season + 1 --Per Year
     ON t1.Season = t0.Season + 7 --Over Period
     AND t1.RevenueRank = t0.RevenueRank
+CROSS JOIN (
+  SELECT SUM(TotalRevenue) AS TotalRevenue
+  FROM PLRevenueByClub
+  WHERE Season = 2022
+) t22
+CROSS JOIN (
+  SELECT SUM(TotalRevenue) AS [TotalRevenue]
+  FROM PLRevenueByClub
+  WHERE Season = 2015
+) t15
 WHERE t0.Season IS NOT NULL
 AND t1.Club
 NOT
@@ -54,7 +78,7 @@ IN (
     'Arsenal',
     'Tottenham'
 )
-GROUP By t1.Season, t0.Season
+GROUP By t1.Season, t0.Season, t22.TotalRevenue, t15.TotalRevenue
 
 
 
@@ -92,3 +116,5 @@ GROUP By t1.Season, t0.Season
 -- --     'Tottenham'
 -- -- )
 -- GROUP By t1.Season, t0.Season
+
+--SELECT * FROM PLRevenueByClub
