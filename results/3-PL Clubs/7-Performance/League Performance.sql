@@ -1,12 +1,13 @@
 
 -- SELECT * FROM PLRevenueByClub
 
--- How Many Clubs Have Finished Top 5 without having Top 5 Revenue?
+    -- How Many Clubs Have Finished Top 5 without having Top 5 Revenue?
 SELECT
     Season,
     Club,
-    RevenueRank,
-    LeaguePosition
+    RevenueRank AS [Revenue Rank],
+    LeaguePosition AS [League Position],
+    RevenueRank - LeaguePosition AS Difference
 FROM PLRevenueByClub
 WHERE LeaguePosition <= 5
 AND RevenueRank >= 6

@@ -14,3 +14,7 @@ GROUP BY Season
 
 -- SELECT * FROM PLRevenueByClub
 -- WHERE Season = 2022
+
+
+SELECT * FROM MoneyLeagueRevenueByClub
+WHERE Season = 2022
