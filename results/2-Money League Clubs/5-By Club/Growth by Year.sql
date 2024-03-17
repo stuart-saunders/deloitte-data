@@ -21,3 +21,4 @@ ON t1.Season = t0.Season + 1
 AND t1.Nation = t0.Nation
 AND t1.Club = t0.Club
 GROUP BY t1.Season, t1.Nation, t1.Club, t0.Season, t0.TotalRevenue
+ORDER BY t1.Season, SUM(t1.TotalRevenue) DESC
