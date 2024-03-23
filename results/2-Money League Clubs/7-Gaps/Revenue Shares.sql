@@ -7,3 +7,13 @@ SELECT
 FROM
     MoneyLeagueRevenueByClub
 GROUP BY Season
+
+--Bottom 5 Revenue Share
+SELECT
+    Season,
+    SUM(CASE WHEN RevenueRank BETWEEN 16 AND 20 THEN TotalRevenue END) AS [Bottom 5 Revenue (€m)],
+    SUM(TotalRevenue) as [Total Revenue (€m)],
+    SUM(CASE WHEN RevenueRank BETWEEN 16 AND 20 THEN TotalRevenue END) / SUM(TotalRevenue) as [Bottom 5 Revenue Share]
+FROM
+    MoneyLeagueRevenueByClub
+GROUP BY Season

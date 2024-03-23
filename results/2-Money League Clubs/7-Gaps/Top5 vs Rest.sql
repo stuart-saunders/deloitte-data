@@ -7,3 +7,14 @@ SELECT
 FROM
     MoneyLeagueRevenueByClub
 GROUP BY Season
+
+/*
+SELECT 
+    Nation, 
+    --Club, 
+    --RevenueRank, 
+    MAX(LeaguePosition)
+FROM MoneyLeagueRevenueByClub
+WHERE Season = 2022
+GROUP BY Nation
+*/

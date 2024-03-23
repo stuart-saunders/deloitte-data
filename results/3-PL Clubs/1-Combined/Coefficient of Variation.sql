@@ -1,6 +1,6 @@
 SELECT
     t1.Season,
-    SUM(t1.TotalRevenue) AS 'Total Revenue',
+    SUM(t1.TotalRevenue) AS 'Total Revenue (£m)',
     --STDEV(t1.TotalRevenue) AS 'Std Deviation',
     FORMAT((ROUND((STDEV(t1.TotalRevenue)), 2)), 'N', 'en-gb') AS [Std Dev],
     --AVG(t1.TotalRevenue) AS Mean,
