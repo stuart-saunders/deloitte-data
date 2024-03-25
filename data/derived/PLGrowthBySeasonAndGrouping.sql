@@ -38,7 +38,7 @@ GROUP BY Season, PrevSeason
 INSERT INTO PLGrowthBySeasonAndGrouping
 SELECT 
     Season,
-    'Middle-Top' AS Grouping,
+    'Upper-Middle' AS Grouping,
     SUM(Revenue) AS Revenue,
     PrevSeason,
     SUM(PrevRevenue) AS PrevRevenue,
@@ -54,7 +54,7 @@ GROUP BY Season, PrevSeason
 INSERT INTO PLGrowthBySeasonAndGrouping
 SELECT 
     Season,
-    'Middle-Bottom' AS Grouping,
+    'Lower-Middle' AS Grouping,
     SUM(Revenue) AS Revenue,
     PrevSeason,
     SUM(PrevRevenue) AS PrevRevenue,
