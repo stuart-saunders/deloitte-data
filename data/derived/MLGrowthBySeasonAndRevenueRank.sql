@@ -1,4 +1,4 @@
--- SELECT * FROM MLGrowthBySeasonAndRevenueRank
+-- SELECT * FROM MLGrowthBySeasonAndRevenueRank ORDER BY Season, RevenueRank
 
 --INSERT INTO MLGrowthBySeasonAndRevenueRank
 SELECT 

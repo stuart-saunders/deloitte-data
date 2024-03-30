@@ -1,3 +1,5 @@
+-- SELECT * FROM MLGrowthBySeasonAndGrouping
+
 -- ALL Clubs
 INSERT INTO MLGrowthBySeasonAndGrouping
 SELECT 

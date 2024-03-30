@@ -19,12 +19,12 @@
 SELECT 
     t1.RevenueRank AS [Rank],
     t1.TotalRevenue AS [2022 Revenue (£m)],
-    FORMAT((ROUND(((SUM(t1.TotalRevenue) / t22.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2022 Share (%)],
+    FORMAT((ROUND(((SUM(t1.TotalRevenue) / t22.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2022 Rev Share (%)],
     t0.TotalRevenue AS [2015 Revenue (£m)],
-    FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2015 Share (%)],
+    FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2015 Rev Share (%)],
     CASE WHEN (SUM(t1.TotalRevenue) / t22.TotalRevenue - SUM(t0.TotalRevenue) / t15.TotalRevenue) > 0 THEN '+' ELSE '-' END AS [Share +/-],
-    t1.TotalRevenue - t0.TotalRevenue AS [Growth Amount],
-    FORMAT(ROUND(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue ) * 100, 2), 'N', 'en-gb') AS [Growth %],
+    t1.TotalRevenue - t0.TotalRevenue AS [Growth (£m)],
+    CAST(((t1.TotalRevenue - t0.TotalRevenue) / t0.TotalRevenue) * 100 AS DECIMAL(10,2))  AS [Growth (%)],
     --POWER((t1.TotalRevenue / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
     CAST(ROUND((POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1) * 100, 2) AS DECIMAL(10,2)) AS [CAGR (%)]
 

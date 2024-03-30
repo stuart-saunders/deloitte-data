@@ -7,8 +7,9 @@ SELECT
     --t0.Season AS PrevSeason,
     SUM(t0.TotalRevenue) AS [2015 Revenue (£m)],
     FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2015 Rev Share (%)],
-    SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Growth Amount],
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS [Growth %],
+    SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Growth (£m)],
+    --FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS [Growth (%)],
+    CAST(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100 AS DECIMAL(10,2)) AS [Growth (%)],
     --POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
     CAST((POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1) * 100 AS DECIMAL(10,3)) AS [CAGR (%)]
 FROM PLRevenueByClub t1
@@ -51,7 +52,7 @@ SELECT
     SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
     FORMAT((ROUND(((SUM(t0.TotalRevenue) / t15.TotalRevenue) * 100), 2)), 'N', 'en-gb') AS [2015 Rev Share (%)l],
     SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Revenue Change],
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS [% Change],
+    CAST(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100 AS DECIMAL(10,2)) AS [Growth (%)],
     --POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
     CAST((POWER((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)), (1.0 / ((t1.Season - t0.Season)))) - 1) * 100 AS DECIMAL(10,3)) AS [CAGR (%)]
 FROM PLRevenueByClub t1

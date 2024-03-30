@@ -1,3 +1,5 @@
+-- SELECT * FROM PLGrowthBySeasonAndGrouping
+
 -- ALL Clubs
 INSERT INTO PLGrowthBySeasonAndGrouping
 SELECT 
@@ -10,7 +12,7 @@ SELECT
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
     SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
     SUM(SUM(Revenue)) OVER () AS TotalRevenue
-FROM PLGrowthBySeasonAndRank
+FROM PLGrowthBySeasonAndRevenueRank
 --WHERE RevenueRank BETWEEN 1 AND 5
 --WHERE RevenueRank BETWEEN 6 AND 15
 --WHERE RevenueRank BETWEEN 16 AND 20
@@ -29,7 +31,7 @@ SELECT
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
     SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
     SUM(SUM(Revenue)) OVER () AS TotalRevenue
-FROM PLGrowthBySeasonAndRank
+FROM PLGrowthBySeasonAndRevenueRank
 WHERE RevenueRank BETWEEN 1 AND 5
 GROUP BY Season, PrevSeason
 
@@ -46,7 +48,7 @@ SELECT
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
     SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
     SUM(SUM(Revenue)) OVER () AS TotalRevenue
-FROM PLGrowthBySeasonAndRank
+FROM PLGrowthBySeasonAndRevenueRank
 WHERE RevenueRank BETWEEN 6 AND 10
 GROUP BY Season, PrevSeason
 
@@ -62,7 +64,7 @@ SELECT
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
     SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
     SUM(SUM(Revenue)) OVER () AS TotalRevenue
-FROM PLGrowthBySeasonAndRank
+FROM PLGrowthBySeasonAndRevenueRank
 WHERE RevenueRank BETWEEN 11 AND 15
 GROUP BY Season, PrevSeason
 
@@ -78,6 +80,6 @@ SELECT
     FORMAT(ROUND(((SUM(Revenue) - SUM(PrevRevenue)) / SUM(PrevRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageAnnualChange,
     SUM(SUM(Revenue)) OVER (ORDER BY Season) AS CumulativeRevenue,
     SUM(SUM(Revenue)) OVER () AS TotalRevenue
-FROM PLGrowthBySeasonAndRank
+FROM PLGrowthBySeasonAndRevenueRank
 WHERE RevenueRank BETWEEN 16 AND 20
 GROUP BY Season, PrevSeason

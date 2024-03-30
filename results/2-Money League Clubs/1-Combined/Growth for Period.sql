@@ -1,12 +1,14 @@
 SELECT
     --t1.Season,
     --t1.Nation,
-    SUM(t1.TotalRevenue) AS [2022 Revenue],
+    SUM(t1.TotalRevenue) AS [2022 Revenue (€m)],
     --t0.Season AS PrevSeason,
-    t0.TotalRevenue AS [2015 Revenue],
-    SUM(t1.TotalRevenue) - t0.TotalRevenue AS 'Growth Amount',
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100, 2), 'N', 'en-gb') AS 'Growth %',    
-    POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
+    t0.TotalRevenue AS [2015 Revenue (€m)],
+    SUM(t1.TotalRevenue) - t0.TotalRevenue AS 'Growth (€m)',
+    --FORMAT(ROUND(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100, 2), 'N', 'en-gb') AS 'Growth (%)',
+    CAST(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100 AS DECIMAL(10,2)) AS [Growth (%)],
+    --POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
+    CAST((POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1) * 100 AS DECIMAL(10,2)) AS [CAGR (%)]
 FROM MoneyLeagueRevenueByClub t1
 LEFT OUTER JOIN (
     SELECT

@@ -228,7 +228,7 @@ INSERT INTO NationRevenueByStream VALUES('Italy', 2022, 'Commercial', 781)
 
 -- Spain
 INSERT INTO NationRevenueByStream VALUES('Spain', 2022, 'Matchday', 409)
-INSERT INTO NationRevenueByStream VALUES('Spain', 2022, 'Broadcasting', 1981)
+INSERT INTO NationRevenueByStream VALUES('Spain', 2022, 'Broadcasting', 1918)
 INSERT INTO NationRevenueByStream VALUES('Spain', 2022, 'Commercial', 950)
 
 

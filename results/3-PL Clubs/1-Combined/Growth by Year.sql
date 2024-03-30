@@ -3,15 +3,16 @@ SELECT
     --t1.RevenueRank,
     --t1.Club,
     --t1.TotalRevenue,
-    SUM(t1.TotalRevenue) AS CombinedRevenue,
-    t0.Season,
+    SUM(t1.TotalRevenue) AS [Revenue (£m)],
+    t0.Season AS [Previous Season],
     --t0.RevenueRank,
     --t0.Club,
     --t0.TotalRevenue,
-    SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
+    SUM(t0.TotalRevenue) AS [Revenue (£m)],
     --t1.TotalRevenue - t0.TotalRevenue,
-    SUM(t1.TotalRevenue - t0.TotalRevenue) AS CombinedRevenueChange,
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+    SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Growth (£m)],
+    --FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100, 2), 'N', 'en-gb') AS [Growth (%)],
+    CAST(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100 AS DECIMAL(10,2)) AS [Growth (%)]
     --FORMAT(ROUND((SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
     --SUM(t1.TotalRevenue) / SUM(t0.TotalRevenue)
 FROM PLRevenueByClub t1

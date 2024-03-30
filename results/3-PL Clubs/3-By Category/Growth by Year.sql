@@ -2,11 +2,12 @@
 SELECT
     'Big 6' AS Category,
     t1.Season,
-    SUM(t1.TotalRevenue) AS CombinedRevenue,
-    t0.Season AS PrevSeason,
-    SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
-    SUM(t1.TotalRevenue - t0.TotalRevenue) AS RevenueChnage,
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+    SUM(t1.TotalRevenue) AS [Revenue (£m)],
+    t0.Season AS [Previous Season],
+    SUM(t0.TotalRevenue) AS [Revenue (£m)],
+    SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Growth (£m)],
+    --FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+    CAST(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100 AS DECIMAL(10,2)) AS [Growth (%)]
 FROM PLRevenueByClub t1
 LEFT OUTER JOIN PLRevenueByClub t0 
     ON t1.Season = t0.Season + 1 --Per Year
@@ -31,11 +32,12 @@ UNION
 SELECT
     'Rest' AS Category,
     t1.Season,
-    SUM(t1.TotalRevenue) AS CombinedRevenue,
-    t0.Season AS PrevSeason,
-    SUM(t0.TotalRevenue) AS CombinedPrevRevenue,
-    SUM(t1.TotalRevenue - t0.TotalRevenue) AS RevenueChnage,
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+    SUM(t1.TotalRevenue) AS [Revenue (£m)],
+    t0.Season AS [Previous Season],
+    SUM(t0.TotalRevenue) AS [Revenue (£m)],
+    SUM(t1.TotalRevenue - t0.TotalRevenue) AS [Growth (£m)],
+    --FORMAT(ROUND(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue) ) * 100, 2), 'N', 'en-gb') AS PercentageRevenueChange
+    CAST(((SUM(t1.TotalRevenue) - SUM(t0.TotalRevenue)) / SUM(t0.TotalRevenue)) * 100 AS DECIMAL(10,2)) AS [Growth (%)]
 FROM PLRevenueByClub t1
 LEFT OUTER JOIN PLRevenueByClub t0 
     ON t1.Season = t0.Season + 1 --Per Year

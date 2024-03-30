@@ -5,8 +5,9 @@ SELECT
     t0.Season AS PrevSeason,
     t0.TotalRevenue AS PrevTotalRevenue,
     SUM(t1.TotalRevenue) - t0.TotalRevenue AS 'Growth Amount',
-    FORMAT(ROUND(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100, 2), 'N', 'en-gb') AS 'Growth %',    
-    POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR
+    CAST(((SUM(t1.TotalRevenue) - t0.TotalRevenue) / t0.TotalRevenue) * 100 AS DECIMAL(10,2)) AS [Growth (%)],
+    --POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1 AS CAGR,
+    CAST((POWER((SUM(t1.TotalRevenue) / t0.TotalRevenue), (1.0 / ((t1.Season - t0.Season)))) - 1) * 100 AS DECIMAL(10,2)) AS [CAGR (%)]
 FROM MoneyLeagueRevenueByClub t1
 LEFT OUTER JOIN (
     SELECT
@@ -20,4 +21,4 @@ ON t1.Season = t0.Season + 7
 AND t1.Nation = t0.Nation
 WHERE t0.Season IS NOT NULL
 GROUP BY t1.Season, t1.Nation, t0.Season, t0.TotalRevenue
-ORDER BY CAGR DESC
+ORDER BY [CAGR (%)] DESC
